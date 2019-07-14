@@ -1,13 +1,33 @@
-target/*
-.settings/*
+.gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+### STS ###
+.apt_generated
 .classpath
+.factorypath
 .project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
 .idea
+*.iws
 *.iml
-/target
+*.ipr
+out/
 
-generated/
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
 
-# Easier branch switching
-springboot-petclinic-client/
-springboot-petclinic-server/
+### Logs ###
+*.log
+*.log.zip
+
+### Frontend ###
+frontend/package-lock.json
