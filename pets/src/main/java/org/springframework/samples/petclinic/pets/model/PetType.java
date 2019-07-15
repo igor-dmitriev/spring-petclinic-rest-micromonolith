@@ -13,18 +13,35 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.springframework.samples.petclinic.model;
+package org.springframework.samples.petclinic.pets.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+
+import lombok.Getter;
+import lombok.Setter;
 
 /**
- * Models a {@link Vet Vet's} specialty (for example, dentistry).
- *
  * @author Juergen Hoeller
+ * @author Igor Dmitriev
  */
 @Entity
-@Table(name = "specialties")
-public class Specialty extends NamedEntity {
+@Getter
+@Setter
+@Table(name = "types")
+public class PetType {
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  protected Integer id;
+
+  @Column(name = "name")
+  @NotEmpty
+  private String name;
 
 }
