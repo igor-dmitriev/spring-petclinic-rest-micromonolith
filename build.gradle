@@ -45,6 +45,7 @@ subprojects {
         testImplementation('org.mockito:mockito-junit-jupiter:2.23.0')
         testCompile 'org.junit.platform:junit-platform-runner:1.3.2'
         testCompile 'org.junit.platform:junit-platform-commons:1.4.0'
+        implementation 'com.google.guava:guava:26.0-jre'
 
         compileOnly("org.projectlombok:lombok:${lombokVersion}")
         testCompileOnly("org.projectlombok:lombok:${lombokVersion}")
