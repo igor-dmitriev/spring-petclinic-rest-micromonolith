@@ -1,3 +1,15 @@
 dependencies {
+    compile project(":audit")
+    compile project(":common")
+    compile project(":config")
+    compile project(":customer")
+    compile project(":customer-api")
+    compile project(":vet")
+    compile project(":vet-api")
+    compile project(":visit")
+    compile project(":visit-api")
+
     implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    testCompile 'com.tngtech.archunit:archunit:0.9.1'
 }

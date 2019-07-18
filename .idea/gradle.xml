@@ -13,10 +13,12 @@
             <option value="$PROJECT_DIR$/audit" />
             <option value="$PROJECT_DIR$/common" />
             <option value="$PROJECT_DIR$/config" />
-            <option value="$PROJECT_DIR$/owners" />
-            <option value="$PROJECT_DIR$/pets" />
-            <option value="$PROJECT_DIR$/vets" />
-            <option value="$PROJECT_DIR$/visits" />
+            <option value="$PROJECT_DIR$/customer" />
+            <option value="$PROJECT_DIR$/customer-api" />
+            <option value="$PROJECT_DIR$/vet" />
+            <option value="$PROJECT_DIR$/vet-api" />
+            <option value="$PROJECT_DIR$/visit" />
+            <option value="$PROJECT_DIR$/visit-api" />
           </set>
         </option>
         <option name="useAutoImport" value="true" />

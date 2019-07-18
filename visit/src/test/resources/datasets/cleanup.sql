@@ -1,0 +1,15 @@
+begin;
+set constraints all deferred;
+commit;
+begin;
+truncate table vet cascade;
+truncate table specialty cascade;
+truncate table vet_specialties cascade;
+truncate table pet_type cascade;
+truncate table owner cascade;
+truncate table pet cascade;
+truncate table visit cascade;
+commit;
+begin;
+set constraints all immediate;
+commit;

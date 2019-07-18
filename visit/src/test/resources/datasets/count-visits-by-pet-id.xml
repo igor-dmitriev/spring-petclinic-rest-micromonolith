@@ -1,0 +1,15 @@
+<dataset>
+    <pet_type id="100" animal="DOG"/>
+    <pet_type id="101" animal="CAT"/>
+
+    <owner id="100" first_name="John" last_name="Doe"/>
+    <owner id="101" first_name="Eric" last_name="Evans"/>
+
+    <pet id="100" name="Jack" birth_date="2018-10-13" type_id="100" owner_id="100"/>
+    <pet id="101" name="Tom" birth_date="2017-11-15" type_id="101" owner_id="101"/>
+
+    <visit id="100" visit_date="2019-01-01" description="visit #1" pet_id="100"/>
+    <visit id="101" visit_date="2019-01-02" description="visit #2" pet_id="100"/>
+    <visit id="102" visit_date="2019-01-03" description="visit #3" pet_id="100"/>
+    <visit id="103" visit_date="2019-01-04" description="visit #4" pet_id="101"/>
+</dataset>

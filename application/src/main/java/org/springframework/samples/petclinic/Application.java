@@ -3,7 +3,7 @@ package org.springframework.samples.petclinic;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;
-import org.springframework.samples.petclinic.config.ApplicationConfig;
+import org.springframework.samples.petclinic.application.config.ApplicationConfig;
 
 @SpringBootApplication
 @Import(ApplicationConfig.class)

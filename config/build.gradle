@@ -1,16 +1,6 @@
-plugins {
-    id 'java'
-}
-
-group 'org.springframework.samples.petclinic'
-version '1.7.0-SNAPSHOT'
-
-sourceCompatibility = 1.8
-
-repositories {
-    mavenCentral()
-}
-
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+    compile 'org.postgresql:postgresql'
+    compile 'org.flywaydb:flyway-core'
+    compile 'p6spy:p6spy:3.7.0'
 }
