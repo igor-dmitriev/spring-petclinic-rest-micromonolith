@@ -1,0 +1,21 @@
+<physical-grid-set sep="." version="5.0.14538">
+  <grid name="Workspace Spec" enforce="true" locked="true" strict="false">
+    <row>
+      <cell name="application" desc="Application" pattern="spring-petclinic-rest-micromonolith___application___main.*" vexpanded="false" illegal="false" visibility="public" drill="true" bgcolor="51,204,0" />
+    </row>
+    <row>
+      <cell name="customer" desc="Customer module" pattern="spring-petclinic-rest-micromonolith___customer___main.*" vexpanded="false" illegal="false" visibility="public" drill="true" bgcolor="255,255,0" />
+      <cell name="visit" pattern="spring-petclinic-rest-micromonolith___visit___main.*" vexpanded="false" illegal="false" visibility="public" drill="true" bgcolor="204,255,204" />
+    </row>
+    <row>
+      <cell name="audit" pattern="spring-petclinic-rest-micromonolith___audit___main.*" vexpanded="false" illegal="false" visibility="public" drill="true" bgcolor="255,204,204" />
+      <cell name="customer-api" pattern="spring-petclinic-rest-micromonolith___customer-api___main.*" vexpanded="false" illegal="false" visibility="public" drill="true" bgcolor="255,255,0" />
+      <cell name="vet" pattern="spring-petclinic-rest-micromonolith___vet___main.*" vexpanded="false" illegal="false" visibility="public" drill="true" bgcolor="153,255,255" />
+    </row>
+    <row>
+      <cell name="common" pattern="spring-petclinic-rest-micromonolith___common___main.*" vexpanded="false" illegal="false" visibility="public" drill="true" bgcolor="204,255,255" />
+      <cell name="config" pattern="spring-petclinic-rest-micromonolith___config___main.*" vexpanded="false" illegal="false" visibility="public" drill="true" bgcolor="255,153,255" />
+    </row>
+    <description>Top-level breakout</description>
+  </grid>
+</physical-grid-set>
