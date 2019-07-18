@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local-project language="java" version="5.0.14538" xml-version="3" flavor="j2se">
+  <property name="publish-architecture-artifacts" value="true" />
+  <property name="force-classpath" value="false" />
+  <property name="project-type" value="classpath" />
+  <property name="hide-externals" value="true" />
+  <property name="parse-archive-in-archive" value="false" />
+  <property name="include-injected-dependency" value="false" />
+  <property name="relative-to" value="const(THIS_FILE)" />
+  <property name="action-set-mod" value="1" />
+  <property name="detail-mode" value="true" />
+  <property name="restructuring-system-file" value="structure101-actions.xml" />
+  <property name="hide-deprecated" value="false" />
+  <property name="resolve-name-clashes" value="true" />
+  <property name="project-excluded" />
+  <property name="show-needs-to-compile" value="false" />
+  <property name="physical-layering-system-file" value="structure101-spec.xml" />
+  <classpath>
+    <classpathentry kind="lib" path="config/build/classes/java/main" module="spring-petclinic-rest-micromonolith___config___main" />
+    <classpathentry kind="lib" path="customer/build/classes/java/main" module="spring-petclinic-rest-micromonolith___customer___main" />
+    <classpathentry kind="lib" path="application/build/classes/java/main" module="spring-petclinic-rest-micromonolith___application___main" />
+    <classpathentry kind="lib" path="visit/build/classes/java/main" module="spring-petclinic-rest-micromonolith___visit___main" />
+    <classpathentry kind="lib" path="vet/build/classes/java/main" module="spring-petclinic-rest-micromonolith___vet___main" />
+    <classpathentry kind="lib" path="customer-api/build/classes/java/main" module="spring-petclinic-rest-micromonolith___customer-api___main" />
+    <classpathentry kind="lib" path="common/build/classes/java/main" module="spring-petclinic-rest-micromonolith___common___main" />
+    <classpathentry kind="lib" path="audit/build/classes/java/main" module="spring-petclinic-rest-micromonolith___audit___main" />
+  </classpath>
+  <pom-root-files />
+  <modules>
+    <module name="spring-petclinic-rest" kind="ide-project" />
+    <module name="spring-petclinic-rest-micromonolith___visit" kind="ide-project" />
+    <module name="spring-petclinic-rest-micromonolith___visit-api___main" kind="ide-project" />
+    <module name="spring-petclinic-rest-micromonolith___visit-api" kind="ide-project" />
+    <module name="spring-petclinic-rest-micromonolith___vet" kind="ide-project" />
+    <module name="spring-petclinic-rest-micromonolith___vet-api___main" kind="ide-project" />
+    <module name="spring-petclinic-rest-micromonolith___vet-api" kind="ide-project" />
+    <module name="spring-petclinic-rest-micromonolith___main" kind="ide-project" />
+    <module name="spring-petclinic-rest-micromonolith___customer" kind="ide-project" />
+    <module name="spring-petclinic-rest-micromonolith___customer-api" kind="ide-project" />
+    <module name="spring-petclinic-rest-micromonolith___config___main" kind="ide-project" />
+    <module name="spring-petclinic-rest-micromonolith___config" kind="ide-project" />
+    <module name="spring-petclinic-rest-micromonolith___common___main" kind="ide-project" />
+    <module name="spring-petclinic-rest-micromonolith___common" kind="ide-project" />
+    <module name="spring-petclinic-rest-micromonolith___audit" kind="ide-project" />
+    <module name="spring-petclinic-rest-micromonolith___application" kind="ide-project" />
+    <module name="spring-petclinic-rest-micromonolith" kind="ide-project" />
+    <module name="spring-petclinic-rest-micromonolith___visit-api___test" kind="ide-project">
+      <requires name="spring-petclinic-rest-micromonolith___visit-api___main" kind="ide-project" />
+    </module>
+    <module name="spring-petclinic-rest-micromonolith___vet___main" kind="ide-project">
+      <requires name="spring-petclinic-rest-micromonolith___common___main" kind="ide-project" />
+      <requires name="spring-petclinic-rest-micromonolith___vet-api___main" kind="ide-project" />
+    </module>
+    <module name="spring-petclinic-rest-micromonolith___vet-api___test" kind="ide-project">
+      <requires name="spring-petclinic-rest-micromonolith___vet-api___main" kind="ide-project" />
+    </module>
+    <module name="spring-petclinic-rest-micromonolith___test" kind="ide-project">
+      <requires name="spring-petclinic-rest-micromonolith___main" kind="ide-project" />
+    </module>
+    <module name="spring-petclinic-rest-micromonolith___customer-api___main" kind="ide-project">
+      <requires name="spring-petclinic-rest-micromonolith___common___main" kind="ide-project" />
+    </module>
+    <module name="spring-petclinic-rest-micromonolith___config___test" kind="ide-project">
+      <requires name="spring-petclinic-rest-micromonolith___config___main" kind="ide-project" />
+    </module>
+    <module name="spring-petclinic-rest-micromonolith___common___test" kind="ide-project">
+      <requires name="spring-petclinic-rest-micromonolith___common___main" kind="ide-project" />
+    </module>
+    <module name="spring-petclinic-rest-micromonolith___audit___main" kind="ide-project">
+      <requires name="spring-petclinic-rest-micromonolith___common___main" kind="ide-project" />
+    </module>
+    <module name="spring-petclinic-rest-micromonolith___visit___main" kind="ide-project">
+      <requires name="spring-petclinic-rest-micromonolith___customer-api___main" kind="ide-project" />
+      <requires name="spring-petclinic-rest-micromonolith___common___main" kind="ide-project" />
+      <requires name="spring-petclinic-rest-micromonolith___config___main" kind="ide-project" />
+      <requires name="spring-petclinic-rest-micromonolith___visit-api___main" kind="ide-project" />
+    </module>
+    <module name="spring-petclinic-rest-micromonolith___vet___test" kind="ide-project">
+      <requires name="spring-petclinic-rest-micromonolith___vet___main" kind="ide-project" />
+      <requires name="spring-petclinic-rest-micromonolith___common___main" kind="ide-project" />
+      <requires name="spring-petclinic-rest-micromonolith___vet-api___main" kind="ide-project" />
+    </module>
+    <module name="spring-petclinic-rest-micromonolith___customer___main" kind="ide-project">
+      <requires name="spring-petclinic-rest-micromonolith___customer-api___main" kind="ide-project" />
+      <requires name="spring-petclinic-rest-micromonolith___common___main" kind="ide-project" />
+    </module>
+    <module name="spring-petclinic-rest-micromonolith___customer-api___test" kind="ide-project">
+      <requires name="spring-petclinic-rest-micromonolith___customer-api___main" kind="ide-project" />
+      <requires name="spring-petclinic-rest-micromonolith___common___main" kind="ide-project" />
+    </module>
+    <module name="spring-petclinic-rest-micromonolith___audit___test" kind="ide-project">
+      <requires name="spring-petclinic-rest-micromonolith___audit___main" kind="ide-project" />
+      <requires name="spring-petclinic-rest-micromonolith___common___main" kind="ide-project" />
+    </module>
+    <module name="spring-petclinic-rest-micromonolith___visit___test" kind="ide-project">
+      <requires name="spring-petclinic-rest-micromonolith___visit___main" kind="ide-project" />
+      <requires name="spring-petclinic-rest-micromonolith___customer-api___main" kind="ide-project" />
+      <requires name="spring-petclinic-rest-micromonolith___common___main" kind="ide-project" />
+      <requires name="spring-petclinic-rest-micromonolith___config___main" kind="ide-project" />
+      <requires name="spring-petclinic-rest-micromonolith___visit-api___main" kind="ide-project" />
+    </module>
+    <module name="spring-petclinic-rest-micromonolith___customer___test" kind="ide-project">
+      <requires name="spring-petclinic-rest-micromonolith___customer___main" kind="ide-project" />
+      <requires name="spring-petclinic-rest-micromonolith___customer-api___main" kind="ide-project" />
+      <requires name="spring-petclinic-rest-micromonolith___common___main" kind="ide-project" />
+    </module>
+    <module name="spring-petclinic-rest-micromonolith___application___main" kind="ide-project">
+      <requires name="spring-petclinic-rest-micromonolith___audit___main" kind="ide-project" />
+      <requires name="spring-petclinic-rest-micromonolith___customer___main" kind="ide-project" />
+      <requires name="spring-petclinic-rest-micromonolith___visit___main" kind="ide-project" />
+      <requires name="spring-petclinic-rest-micromonolith___customer-api___main" kind="ide-project" />
+      <requires name="spring-petclinic-rest-micromonolith___vet___main" kind="ide-project" />
+      <requires name="spring-petclinic-rest-micromonolith___common___main" kind="ide-project" />
+      <requires name="spring-petclinic-rest-micromonolith___config___main" kind="ide-project" />
+      <requires name="spring-petclinic-rest-micromonolith___vet-api___main" kind="ide-project" />
+      <requires name="spring-petclinic-rest-micromonolith___visit-api___main" kind="ide-project" />
+    </module>
+    <module name="spring-petclinic-rest-micromonolith___application___test" kind="ide-project">
+      <requires name="spring-petclinic-rest-micromonolith___application___main" kind="ide-project" />
+      <requires name="spring-petclinic-rest-micromonolith___audit___main" kind="ide-project" />
+      <requires name="spring-petclinic-rest-micromonolith___customer___main" kind="ide-project" />
+      <requires name="spring-petclinic-rest-micromonolith___visit___main" kind="ide-project" />
+      <requires name="spring-petclinic-rest-micromonolith___customer-api___main" kind="ide-project" />
+      <requires name="spring-petclinic-rest-micromonolith___vet___main" kind="ide-project" />
+      <requires name="spring-petclinic-rest-micromonolith___common___main" kind="ide-project" />
+      <requires name="spring-petclinic-rest-micromonolith___config___main" kind="ide-project" />
+      <requires name="spring-petclinic-rest-micromonolith___vet-api___main" kind="ide-project" />
+      <requires name="spring-petclinic-rest-micromonolith___visit-api___main" kind="ide-project" />
+    </module>
+  </modules>
+  <modules-in-scope>
+    <module name="spring-petclinic-rest-micromonolith___vet-api___main" />
+    <module name="spring-petclinic-rest-micromonolith___vet-api___test" />
+    <module name="spring-petclinic-rest-micromonolith___visit-api" />
+    <module name="spring-petclinic-rest-micromonolith___visit-api___main" />
+    <module name="spring-petclinic-rest-micromonolith___visit-api___test" />
+    <module name="spring-petclinic-rest-micromonolith___visit" />
+    <module name="spring-petclinic-rest-micromonolith___vet-api" />
+    <module name="spring-petclinic-rest-micromonolith___main" />
+    <module name="spring-petclinic-rest-micromonolith___vet" />
+    <module name="spring-petclinic-rest-micromonolith___test" />
+    <module name="spring-petclinic-rest-micromonolith___config___main" />
+    <module name="spring-petclinic-rest-micromonolith___config___test" />
+    <module name="spring-petclinic-rest-micromonolith___customer-api" />
+    <module name="spring-petclinic-rest-micromonolith___config" />
+    <module name="spring-petclinic-rest-micromonolith___customer" />
+    <module name="spring-petclinic-rest-micromonolith___common___main" />
+    <module name="spring-petclinic-rest-micromonolith___vet___main" />
+    <module name="spring-petclinic-rest-micromonolith___vet___test" />
+    <module name="spring-petclinic-rest-micromonolith___customer-api___main" />
+    <module name="spring-petclinic-rest-micromonolith___visit___main" />
+    <module name="spring-petclinic-rest-micromonolith___visit___test" />
+    <module name="spring-petclinic-rest-micromonolith___customer___main" />
+    <module name="spring-petclinic-rest-micromonolith___customer___test" />
+    <module name="spring-petclinic-rest-micromonolith___customer-api___test" />
+    <module name="spring-petclinic-rest-micromonolith___common___test" />
+    <module name="spring-petclinic-rest" />
+    <module name="spring-petclinic-rest-micromonolith___audit___main" />
+    <module name="spring-petclinic-rest-micromonolith___audit___test" />
+    <module name="spring-petclinic-rest-micromonolith___application___main" />
+    <module name="spring-petclinic-rest-micromonolith___application___test" />
+    <module name="spring-petclinic-rest-micromonolith___application" />
+    <module name="spring-petclinic-rest-micromonolith___common" />
+    <module name="spring-petclinic-rest-micromonolith___audit" />
+    <module name="spring-petclinic-rest-micromonolith" />
+  </modules-in-scope>
+  <excludes>
+    <exclude expression="*.*&amp;amp;*" active="true" />
+  </excludes>
+  <grid-set sep="." version="5.0.14538" />
+</local-project>
