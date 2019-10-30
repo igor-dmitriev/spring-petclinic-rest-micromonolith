@@ -27,6 +27,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
@@ -48,8 +49,9 @@ import lombok.Setter;
 @Table(name = "vet")
 public class Vet {
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  protected Integer id;
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "vet_seq")
+  @SequenceGenerator(name = "vet_seq", sequenceName = "vet_seq", allocationSize = 1)
+  private Integer id;
 
   @Column(name = "first_name")
   @NotEmpty

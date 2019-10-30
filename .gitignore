@@ -1,5 +1,5 @@
 .gradle
-build/
+/build/
 !gradle/wrapper/gradle-wrapper.jar
 
 ### STS ###
@@ -16,18 +16,12 @@ build/
 *.iws
 *.iml
 *.ipr
-out/
+/out/
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-
-### Logs ###
+### Logging ###
 *.log
-*.log.zip
 
-### Frontend ###
-frontend/package-lock.json
+### Allure ###
+*/allure-results/
+.allure
+allure-results

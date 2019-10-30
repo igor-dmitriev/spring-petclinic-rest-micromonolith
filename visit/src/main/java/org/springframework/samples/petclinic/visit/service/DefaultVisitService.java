@@ -1,7 +1,6 @@
 package org.springframework.samples.petclinic.visit.service;
 
-import com.google.common.eventbus.EventBus;
-
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.samples.petclinic.common.data.AnimalType;
 import org.springframework.samples.petclinic.common.error.ResourceNotFoundException;
 import org.springframework.samples.petclinic.common.error.VisitsAmountIsExceededException;
@@ -27,7 +26,7 @@ public class DefaultVisitService implements VisitService {
 
   private final VisitRepository visitRepository;
   private final ApiPetService apiPetService;
-  private final EventBus eventBus;
+  private final ApplicationEventPublisher eventPublisher;
 
   @Override
   public Visit getVisitById(int id) {
@@ -50,7 +49,7 @@ public class DefaultVisitService implements VisitService {
       throw new VisitsAmountIsExceededException();
     }
     visitRepository.saveAndFlush(visit);
-    eventBus.post(
+    eventPublisher.publishEvent(
         new VisitCreatedEvent(visit.getId(), visit.getDescription(), visit.getPetId())
     );
   }

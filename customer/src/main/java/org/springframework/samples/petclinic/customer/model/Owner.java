@@ -25,6 +25,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotEmpty;
@@ -44,11 +45,12 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(name = "owners")
+@Table(name = "owner")
 public class Owner {
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  protected Integer id;
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "owner_seq")
+  @SequenceGenerator(name = "owner_seq", sequenceName = "owner_seq", allocationSize = 1)
+  private Integer id;
 
   @Column(name = "address")
   @NotEmpty

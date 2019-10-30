@@ -26,6 +26,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -45,12 +46,13 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(name = "pets")
+@Table(name = "pet")
 public class Pet {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  protected Integer id;
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pet_seq")
+  @SequenceGenerator(name = "pet_seq", sequenceName = "pet_seq", allocationSize = 1)
+  private Integer id;
 
   @Column(name = "name")
   @NotEmpty
@@ -62,18 +64,10 @@ public class Pet {
   private Date birthDate;
 
   @ManyToOne
-  @JoinColumn(name = "type_id")
+  @JoinColumn(name = "type_id", nullable = false)
   private PetType type;
 
   @ManyToOne
   @JoinColumn(name = "owner_id")
   private Owner owner;
-
-/*  @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet", fetch = FetchType.EAGER)
-  private Set<Visit> visit;
-
-  public void addVisit(Visit visit) {
-    visit.add(visit);
-    visit.setPet(this);
-  }*/
 }

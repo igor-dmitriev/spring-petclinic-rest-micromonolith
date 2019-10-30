@@ -24,6 +24,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import lombok.Getter;
@@ -40,8 +41,9 @@ import lombok.Setter;
 public class PetType {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  protected Integer id;
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pet_type_seq")
+  @SequenceGenerator(name = "pet_type_seq", sequenceName = "pet_type_seq", allocationSize = 1)
+  private Integer id;
 
   @Column(name = "animal", nullable = false)
   @Enumerated(EnumType.STRING)
