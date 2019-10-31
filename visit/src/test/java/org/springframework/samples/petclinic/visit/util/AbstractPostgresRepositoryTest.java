@@ -38,8 +38,4 @@ public class AbstractPostgresRepositoryTest {
     System.setProperty("spring.datasource.password", TEST_PASSWORD);
   }
 
-  protected void flushAndClear() {
-    em.flush();
-    em.clear();
-  }
 }

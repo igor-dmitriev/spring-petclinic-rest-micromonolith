@@ -46,20 +46,25 @@ class DefaultVisitServiceUnitTest {
 
   @Test
   void shouldSaveVisit() {
+    // given
     PetResponse petResponse = PetResponse.builder()
         .id(1)
         .name("test pet")
         .type(AnimalType.BIRD)
         .build();
     when(apiPetService.getPet(1)).thenReturn(petResponse);
-
     Visit visitToSave = Visit.builder().petId(1).build();
+
+    // when
     visitService.saveVisit(visitToSave);
+
+    // then
     verify(visitRepository, times(1)).saveAndFlush(visitToSave);
   }
 
   @Test
   void shouldThrownVisitsAmountExceededExceptionWhenAnimalTypeIsLizardAndCountOfVisitsIs5() {
+    // given
     PetResponse petResponse = PetResponse.builder()
         .id(1)
         .name("test pet")
@@ -68,6 +73,7 @@ class DefaultVisitServiceUnitTest {
     when(apiPetService.getPet(1)).thenReturn(petResponse);
     when(visitRepository.countByPetId(Mockito.anyInt())).thenReturn(5L);
 
+    // expect
     assertThrows(
         VisitsAmountIsExceededException.class,
         () -> visitService.saveVisit(Visit.builder().petId(1).build())
@@ -76,41 +82,63 @@ class DefaultVisitServiceUnitTest {
 
   @Test
   void visitMayBeDeleted() {
+    // given
     Visit visitToDelete = Visit.builder().id(1).build();
     when(visitRepository.findById(1)).thenReturn(Optional.of(visitToDelete));
 
+    // when
     visitService.deleteVisit(1);
+
+    // then
     verify(visitRepository, times(1)).delete(visitToDelete);
   }
 
   @Test
   void visitMayBeUpdated() {
+    // given
     Visit visitToUpdate = Visit.builder().id(1).build();
+
+    // when
     visitService.updateVisit(visitToUpdate);
+
+    // then
     verify(visitRepository, times(1)).save(visitToUpdate);
   }
 
   @Test
   void shouldGetAllVisits() {
+    // given
     List<Visit> visits = Arrays.asList(
         Visit.builder().build(),
         Visit.builder().build(),
         Visit.builder().build()
     );
+
+    // when
     when(visitRepository.findAll()).thenReturn(visits);
+
+    // then
     assertThat(visitService.getAllVisits().equals(visits)).isTrue();
   }
 
   @Test
   void shouldGetVisitById() {
+    // given
     Visit visit = Visit.builder().id(1).build();
+
+    // when
     when(visitRepository.findById(1)).thenReturn(Optional.of(visit));
+
+    // then
     assertThat(visitService.getVisitById(1).equals(visit)).isTrue();
   }
 
   @Test
   void shouldThrownResourceNotFoundIfThereIsNoVisitById() {
+    // given
     when(visitRepository.findById(1)).thenReturn(Optional.empty());
+
+    // expect
     assertThrows(
         ResourceNotFoundException.class,
         () -> visitService.getVisitById(1)

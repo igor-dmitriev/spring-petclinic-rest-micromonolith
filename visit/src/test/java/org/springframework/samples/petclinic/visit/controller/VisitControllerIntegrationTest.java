@@ -31,6 +31,7 @@ public class VisitControllerIntegrationTest {
 
   @Test
   public void shouldReturnVisitById() throws Exception {
+    // given
     Visit expectedVisit = Visit.builder()
         .id(1)
         .description("test description")
@@ -38,6 +39,7 @@ public class VisitControllerIntegrationTest {
         .build();
     Mockito.when(visitService.getVisitById(1)).thenReturn(expectedVisit);
 
+    // expect
     mockMvc.perform(get(Endpoints.VISIT + "/" + 1)
         .contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
         .andExpect(status().isOk())

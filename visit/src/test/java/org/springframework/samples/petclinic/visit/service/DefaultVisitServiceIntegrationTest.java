@@ -2,7 +2,7 @@ package org.springframework.samples.petclinic.visit.service;
 
 import com.github.database.rider.core.api.connection.ConnectionHolder;
 import com.github.database.rider.core.api.dataset.DataSet;
-import com.github.database.rider.core.api.dataset.SeedStrategy;
+import com.github.database.rider.core.api.dataset.ExpectedDataSet;
 import com.github.database.rider.spring.api.DBRider;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -23,10 +23,8 @@ import org.springframework.test.context.ActiveProfiles;
 import java.util.Calendar;
 import java.util.Date;
 
-import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
-
-@DataJpaTest
 @DBRider
+@DataJpaTest
 @ActiveProfiles("test")
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 class DefaultVisitServiceIntegrationTest extends AbstractPostgresRepositoryTest {
@@ -50,25 +48,20 @@ class DefaultVisitServiceIntegrationTest extends AbstractPostgresRepositoryTest 
   }
 
   @Test
-  @DataSet(
-      value = {"datasets/create-visit.xml"},
-      executeScriptsBefore = "datasets/cleanup.sql",
-      strategy = SeedStrategy.INSERT
-  )
+  @DataSet("datasets/create-visit.xml")
+  @ExpectedDataSet("datasets/create-visit-expected.xml")
   public void shouldSaveVisit() {
+    // given
     Visit visit = Visit.builder()
         .petId(100)
         .date(visitDate())
         .description("test description")
         .build();
     PetResponse petResponse = PetResponse.builder().type(AnimalType.DOG).build();
+
+    // when
     Mockito.when(apiPetService.getPet(100)).thenReturn(petResponse);
     visitService.saveVisit(visit);
-
-    flushAndClear();
-
-    Visit actual = visitRepository.getOne(1);
-    assertThat(actual.getId()).isEqualTo(1);
   }
 
   private Date visitDate() {

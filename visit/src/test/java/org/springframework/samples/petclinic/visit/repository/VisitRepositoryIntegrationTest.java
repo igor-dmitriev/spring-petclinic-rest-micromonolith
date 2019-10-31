@@ -27,11 +27,7 @@ public class VisitRepositoryIntegrationTest extends AbstractPostgresRepositoryTe
   VisitRepository visitRepository;
 
   @Test
-  @DataSet(
-      value = {"datasets/count-visits-by-pet-id.xml"},
-      executeScriptsBefore = "datasets/cleanup.sql",
-      strategy = SeedStrategy.INSERT
-  )
+  @DataSet("datasets/count-visits-by-pet-id.xml")
   public void shouldCountByPetId() {
     assertThat(visitRepository.countByPetId(100)).isEqualTo(3);
   }

@@ -1,0 +1,6 @@
+<dataset>
+    <pet_type id="100" animal="DOG"/>
+    <owner id="100" first_name="John" last_name="Doe"/>
+    <pet id="100" name="Jack" birth_date="2018-10-13" type_id="100" owner_id="100"/>
+    <visit id="1" pet_id="100" description="test description" visit_date="2019-02-01"/>
+</dataset>
