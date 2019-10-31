@@ -1,13 +1,12 @@
 package org.springframework.samples.petclinic.visit.service;
 
-import com.google.common.eventbus.EventBus;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.samples.petclinic.common.data.AnimalType;
 import org.springframework.samples.petclinic.common.error.ResourceNotFoundException;
 import org.springframework.samples.petclinic.common.error.VisitsAmountIsExceededException;
@@ -37,9 +36,12 @@ class DefaultVisitServiceUnitTest {
   @Mock
   ApiPetService apiPetService;
 
+  @Mock
+  ApplicationEventPublisher eventPublisher;
+
   @BeforeEach
   void init() {
-    visitService = new DefaultVisitService(visitRepository, apiPetService, new EventBus());
+    visitService = new DefaultVisitService(visitRepository, apiPetService, eventPublisher);
   }
 
   @Test

@@ -9,6 +9,7 @@ dependencies {
     compile 'org.postgresql:postgresql'
     testCompile 'org.testcontainers:postgresql:1.10.0'
     testCompile 'org.testcontainers:junit-jupiter:1.11.3'
-    testCompile 'com.github.database-rider:rider-core:1.4.0'
+    testCompile 'com.github.database-rider:rider-core:1.7.3'
     testCompile 'com.github.database-rider:rider-junit5:1.5.2'
+    testCompile 'com.github.database-rider:rider-spring:1.5.2'
 }

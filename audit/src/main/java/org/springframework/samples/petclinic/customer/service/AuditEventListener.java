@@ -1,9 +1,8 @@
-package org.springframework.samples.petclinic.customer.listener;
+package org.springframework.samples.petclinic.customer.service;
 
 import org.springframework.context.event.EventListener;
 import org.springframework.samples.petclinic.common.event.VisitCreatedEvent;
 import org.springframework.samples.petclinic.customer.entity.AuditEntity;
-import org.springframework.samples.petclinic.customer.service.AuditService;
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;

@@ -3,24 +3,20 @@ package org.springframework.samples.petclinic.visit.repository;
 import com.github.database.rider.core.api.connection.ConnectionHolder;
 import com.github.database.rider.core.api.dataset.DataSet;
 import com.github.database.rider.core.api.dataset.SeedStrategy;
-import com.github.database.rider.junit5.DBUnitExtension;
+import com.github.database.rider.spring.api.DBRider;
 
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.samples.petclinic.visit.util.AbstractPostgresRepositoryTest;
 import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
 @DataJpaTest
+@DBRider
 @ActiveProfiles("test")
-@RunWith(SpringRunner.class)
-@ExtendWith(DBUnitExtension.class)
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 public class VisitRepositoryIntegrationTest extends AbstractPostgresRepositoryTest {
 
