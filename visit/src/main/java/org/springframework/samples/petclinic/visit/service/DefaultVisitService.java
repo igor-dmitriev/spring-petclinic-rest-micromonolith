@@ -22,7 +22,7 @@ import lombok.RequiredArgsConstructor;
 public class DefaultVisitService implements VisitService {
 
   private static final String VISIT_NOT_FOUND_PATTERN = "Visit with id %d not found";
-  private static final int MAX_VISITS_THRESHOLD = 3;
+  private static final int MAX_VISITS_LIMIT = 3;
 
   private final VisitRepository visitRepository;
   private final ApiPetService apiPetService;
@@ -45,7 +45,7 @@ public class DefaultVisitService implements VisitService {
     Integer petId = visit.getPetId();
     PetResponse pet = apiPetService.getPet(petId);
     boolean isLizardOrSnake = pet.getType() == AnimalType.LIZARD || pet.getType() == AnimalType.SNAKE;
-    if (isLizardOrSnake && visitRepository.countByPetId(petId) >= MAX_VISITS_THRESHOLD) {
+    if (isLizardOrSnake && visitRepository.countByPetId(petId) >= MAX_VISITS_LIMIT) {
       throw new VisitsAmountIsExceededException();
     }
     visitRepository.saveAndFlush(visit);
